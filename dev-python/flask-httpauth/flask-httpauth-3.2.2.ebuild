@@ -9,7 +9,7 @@ inherit distutils-r1
 MY_PN="Flask-HTTPAuth"
 
 DESCRIPTION="Provides Basic and Digest HTTP authentication for Flask routes"
-HOMEPAGE="http://github.com/miguelgrinberg/Flask-HTTPAuth https://pypi.python.org/pypi/Flask-HTTPAuth"
+HOMEPAGE="http://github.com/miguelgrinberg/${MY_PN}"
 SRC_URI="https://github.com/miguelgrinberg/${MY_PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
