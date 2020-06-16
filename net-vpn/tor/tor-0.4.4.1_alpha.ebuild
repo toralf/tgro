@@ -10,7 +10,8 @@ MY_PF="${PN}-${MY_PV}"
 DESCRIPTION="Anonymizing overlay network for TCP"
 HOMEPAGE="http://www.torproject.org/"
 SRC_URI="https://www.torproject.org/dist/${MY_PF}.tar.gz
-	https://archive.torproject.org/tor-package-archive/${MY_PF}.tar.gz"
+	https://archive.torproject.org/tor-package-archive/${MY_PF}.tar.gz
+	https://people.torproject.org/~nickm/volatile/src/${MY_PF}.tar.gz"
 S="${WORKDIR}/${MY_PF}"
 
 LICENSE="BSD GPL-2"
