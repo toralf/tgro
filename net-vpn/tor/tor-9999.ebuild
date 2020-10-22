@@ -8,7 +8,6 @@ EGIT_REPO_URI="https://gitlab.torproject.org/tpo/core/tor"
 inherit flag-o-matic readme.gentoo-r1 git-r3
 
 MY_PV="$(ver_rs 4 -)"
-#MY_PF="${PN}-master"
 DESCRIPTION="Anonymizing overlay network for TCP"
 HOMEPAGE="http://www.torproject.org/"
 
@@ -37,7 +36,6 @@ RDEPEND="
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-0.2.7.4-torrc.sample.patch
-	#"${FILESDIR}"/${PN}-0.3.3.2-alpha-tor.service.in.patch
 )
 
 DOCS=()
@@ -50,7 +48,7 @@ src_configure() {
 	./autogen.sh
 	econf \
 		--localstatedir="${EPREFIX}/var" \
-		--enable-system-torrc \
+		--disable-all-bugs-are-fatal \\
 		--disable-android \
 		--disable-coverage \
 		--disable-html-manual \
@@ -60,6 +58,7 @@ src_configure() {
 		--enable-pic \
 		--disable-restart-debugging \
 		--disable-rust \
+		--enable-system-torrc \
 		$(use_enable man asciidoc) \
 		$(use_enable man manpage) \
 		$(use_enable lzma) \
@@ -70,8 +69,7 @@ src_configure() {
 		$(use_enable tor-hardening gcc-hardening) \
 		$(use_enable tor-hardening linker-hardening) \
 		$(use_enable test unittests) \
-		$(use_enable zstd zstd-advanced-apis) \
-		$(use_enable zstd)
+		$(use_enable zstd zstd-advanced-apis)
 }
 
 src_install() {
