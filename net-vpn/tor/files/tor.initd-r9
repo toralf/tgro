@@ -5,8 +5,7 @@
 command=/usr/bin/tor
 pidfile=/run/tor/tor.pid
 command_args="--hush --runasdaemon 1 --pidfile \"${pidfile}\""
-retry=${GRACEFUL_TIMEOUT:-60}
-stopsig=INT
+retry="INT/30/TERM/10/KILL/5"
 command_progress=yes
 
 extra_commands="checkconfig"
