@@ -25,12 +25,6 @@ src_compile() {
 		PREFIX="${EPREFIX}/usr" \
 		HELPER_PATH="${EPREFIX}/usr/$(get_libdir)/afl" \
 		DOC_PATH="${EPREFIX}/usr/share/doc/${PF}"
-	CC="clang" CXX="clang++" strip-unsupported-flags
-	cd instrumentation || die
-	emake \
-		PREFIX="${EPREFIX}/usr" \
-		HELPER_PATH="${EPREFIX}/usr/$(get_libdir)/afl" \
-		DOC_PATH="${EPREFIX}/usr/share/doc/${PF}"
 }
 
 src_install() {
