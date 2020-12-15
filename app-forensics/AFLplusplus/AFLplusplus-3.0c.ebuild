@@ -26,7 +26,7 @@ src_compile() {
 		HELPER_PATH="${EPREFIX}/usr/$(get_libdir)/afl" \
 		DOC_PATH="${EPREFIX}/usr/share/doc/${PF}"
 	CC="clang" CXX="clang++" strip-unsupported-flags
-	cd llvm_mode || die
+	cd instrumentation || die
 	emake \
 		PREFIX="${EPREFIX}/usr" \
 		HELPER_PATH="${EPREFIX}/usr/$(get_libdir)/afl" \
