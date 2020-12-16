@@ -18,8 +18,6 @@ DEPEND="sys-devel/gcc:*
 RDEPEND="${DEPEND}"
 QA_PREBUILT="/usr/share/afl/testcases/others/elf/small_exec.elf"
 
-S="${WORKDIR}/AFLplusplus-${PV}"
-
 src_compile() {
 	emake CC="$(tc-getCC)" \
 		PREFIX="${EPREFIX}/usr" \
