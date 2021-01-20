@@ -5,7 +5,7 @@ EAPI="7"
 
 EGIT_REPO_URI="https://gitlab.torproject.org/tpo/core/tor"
 
-inherit flag-o-matic readme.gentoo-r1 git-r3
+inherit flag-o-matic readme.gentoo-r1 systemd git-r3
 
 MY_PV="$(ver_rs 4 -)"
 DESCRIPTION="Anonymizing overlay network for TCP"
@@ -78,6 +78,7 @@ src_install() {
 
 	newconfd "${FILESDIR}"/tor.confd tor
 	newinitd "${FILESDIR}"/tor.initd-r9 tor
+	systemd_dounit "${FILESDIR}"/tor.service
 
 	keepdir /var/lib/tor
 
