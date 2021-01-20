@@ -48,7 +48,7 @@ src_configure() {
 	./autogen.sh
 	econf \
 		--localstatedir="${EPREFIX}/var" \
-		--disable-all-bugs-are-fatal \\
+		--disable-all-bugs-are-fatal \
 		--disable-android \
 		--disable-coverage \
 		--disable-html-manual \
