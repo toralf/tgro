@@ -5,7 +5,7 @@
 command=/usr/bin/tor
 pidfile=/run/tor/${RC_SVCNAME}.pid
 command_args="-f ${torrc} --hush --runasdaemon 1 --pidfile \"${pidfile}\""
-retry="INT/30/TERM/10/KILL/5"
+retry=${GRACEFUL_TIMEOUT:-60}
 command_progress=yes
 
 extra_commands="checkconfig"
