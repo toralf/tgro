@@ -3,13 +3,12 @@
 
 EAPI="7"
 
-EGIT_REPO_URI="https://gitlab.torproject.org/tpo/core/tor"
-
 inherit flag-o-matic readme.gentoo-r1 systemd git-r3
 
 MY_PV="$(ver_rs 4 -)"
 DESCRIPTION="Anonymizing overlay network for TCP"
 HOMEPAGE="http://www.torproject.org/"
+EGIT_REPO_URI="https://gitlab.torproject.org/tpo/core/tor"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
