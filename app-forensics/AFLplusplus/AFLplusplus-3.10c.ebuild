@@ -18,16 +18,8 @@ DEPEND="sys-devel/gcc:*
 RDEPEND="${DEPEND}"
 QA_PREBUILT="/usr/share/afl/testcases/others/elf/small_exec.elf"
 
-S="${WORKDIR}/AFLplusplus-${PV}"
-
 src_compile() {
 	emake CC="$(tc-getCC)" \
-		PREFIX="${EPREFIX}/usr" \
-		HELPER_PATH="${EPREFIX}/usr/$(get_libdir)/afl" \
-		DOC_PATH="${EPREFIX}/usr/share/doc/${PF}"
-	CC="clang" CXX="clang++" strip-unsupported-flags
-	cd llvm_mode || die
-	emake \
 		PREFIX="${EPREFIX}/usr" \
 		HELPER_PATH="${EPREFIX}/usr/$(get_libdir)/afl" \
 		DOC_PATH="${EPREFIX}/usr/share/doc/${PF}"
